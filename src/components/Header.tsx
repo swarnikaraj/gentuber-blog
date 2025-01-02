@@ -12,15 +12,20 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
+
 interface MenuItem {
   name: string;
   href: string;
   openInNewTab?: boolean;
 }
+
 const menuItems: MenuItem[] = [
-  { name: "Blog", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "Features", href: "/features" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
 ];
+
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
 
@@ -33,8 +38,8 @@ export const Navigation: FunctionComponent = () => {
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
               className={cn(
-                "hover:text-gray-900",
-                pathname === item.href && "font-semibold"
+                "hover:text-red-600 transition duration-300",
+                pathname === item.href && "font-semibold text-red-600"
               )}
             >
               {item.name}
@@ -56,8 +61,8 @@ export const Navigation: FunctionComponent = () => {
                     href={item.href}
                     target={item.openInNewTab ? "_blank" : "_self"}
                     className={cn(
-                      "block py-2",
-                      pathname === item.href && "font-semibold"
+                      "block py-2 hover:text-red-600 transition duration-300",
+                      pathname === item.href && "font-semibold text-red-600"
                     )}
                   >
                     {item.name}
@@ -74,13 +79,29 @@ export const Navigation: FunctionComponent = () => {
 
 export const Header: FunctionComponent = () => {
   return (
-    <section className="flex items-center justify-between mt-8 md:mt-16 mb-12">
+    <header className="flex items-center justify-between py-6 px-4 md:px-16 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white shadow-lg">
       <Link href="/">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
-          {config.blog.name}
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight hover:text-red-600 transition duration-300">
+          GenTuber
         </h1>
+        <p className="text-sm opacity-80 mt-1">AI-Driven Tools for YouTubers</p>
       </Link>
+      <div className="hidden md:block">
+        <input
+          type="text"
+          placeholder="Search blogs, tools..."
+          className="p-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+        />
+      </div>
       <Navigation />
-    </section>
+      <div className="hidden md:flex ml-4">
+        <Link
+          href="/signup"
+          className="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700"
+        >
+          Sign Up
+        </Link>
+      </div>
+    </header>
   );
 };

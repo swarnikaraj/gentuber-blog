@@ -15,7 +15,7 @@ export const BlogPostPreview: FunctionComponent<{
 
   return (
     <article
-      className="break-words"
+      className="break-words p-8 bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
       itemScope
       itemType="https://schema.org/BlogPosting"
     >

@@ -21,11 +21,11 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { name: "Features", href: "/features" },
-  { name: "Pricing", href: "/pricing" },
+  { name: "Features", href: "http://localhost:3000/#products" ,openInNewTab:true},
+  { name: "Pricing", href: "http://gentuber.com/#pricing",openInNewTab:true },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/" },
-  { name: "Contact", href: "mailto:team-gentuber@gentuber.com" },
+  { name: "Contact", href: "mailto:team-gentuber@gentuber.com" ,openInNewTab:true},
 ];
  
 export const Navigation: FunctionComponent = () => {

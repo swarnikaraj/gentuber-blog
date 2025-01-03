@@ -1,8 +1,8 @@
 "use client";
 import { FunctionComponent } from "react";
 import Link from "next/link";
-import { Rss } from "lucide-react";
-import { AiFillTwitterCircle, AiFillYoutube, AiFillInstagram } from "react-icons/ai";
+
+import { AiFillYoutube,  } from "react-icons/ai";
 import Logo from "./Logo";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";

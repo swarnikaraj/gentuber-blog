@@ -21,8 +21,8 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { name: "Features", href: "http://localhost:3000/#products" ,openInNewTab:true},
-  { name: "Pricing", href: "http://gentuber.com/#pricing",openInNewTab:true },
+  { name: "Features", href: "https://gentuber.com/#products" ,openInNewTab:true},
+  { name: "Pricing", href: "https://gentuber.com/#pricing",openInNewTab:true },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/" },
   { name: "Contact", href: "mailto:team-gentuber@gentuber.com" ,openInNewTab:true},
